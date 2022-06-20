@@ -33,7 +33,7 @@ class UsersRepository implements IUsersRepository{
         return UsersRepository.INSTANCE.users.find(find => find.id === id);
     }
 
-    deleteUser(id: string): User {
+    deleteUser(id: string): User[] | undefined {
         throw new Error("Method not implemented.");
     }
     
