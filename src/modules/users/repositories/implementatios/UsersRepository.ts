@@ -38,7 +38,7 @@ class UsersRepository implements IUsersRepository{
     }
     
     listUser(): User[] {
-        throw new Error("Method not implemented.");
+        return this.users;
     }
 }
 
