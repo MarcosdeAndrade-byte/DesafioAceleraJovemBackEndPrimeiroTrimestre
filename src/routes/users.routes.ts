@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { createUserController } from "../modules/users/useCases/createUser";
+import { findUserByIdController } from "../modules/users/useCases/findUserById";
 import { listAllUsersController } from "../modules/users/useCases/listAllUsers";
 
 const usersRoutes = Router();
@@ -12,5 +13,10 @@ usersRoutes.post('/create',(request,response) => {
 usersRoutes.get("/list",(request,response) => {
     listAllUsersController.handle(request,response);
 });
+
+usersRoutes.get("/:user_id",(request,response) => {
+    findUserByIdController.handle(request,response);
+});
+
 
 export {usersRoutes};
