@@ -1,5 +1,5 @@
 import { User } from "../../model/User";
-import { UsersRepository } from "../../repositories/implementatios/UsersRepository";
+import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 
 
 

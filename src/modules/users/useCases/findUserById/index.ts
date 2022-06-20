@@ -1,4 +1,4 @@
-import { UsersRepository } from "../../repositories/implementatios/UsersRepository";
+import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 import { FindUserByIdController } from "./findUserByIdController";
 import { FindUserByIdUseCase } from "./findUserByIdUseCase";
 

@@ -1,4 +1,4 @@
-import { UsersRepository } from "../../repositories/implementatios/UsersRepository";
+import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 
 interface IRequest {
     user_id: string;
