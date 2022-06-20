@@ -29,8 +29,8 @@ class UsersRepository implements IUsersRepository{
        return new_user;
     }
 
-    findById(id: string): User {
-        throw new Error("Method not implemented.");
+    findById(id: string): User | undefined {
+        return UsersRepository.INSTANCE.users.find(find => find.id === id);
     }
 
     deleteUser(id: string): User {
