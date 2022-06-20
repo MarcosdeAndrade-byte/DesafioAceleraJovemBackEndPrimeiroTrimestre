@@ -6,10 +6,13 @@ class User{
     lastName: string;
     age: number;
 
-    constructor(){
+    constructor(name: string,lastName: string,age: number){
         if(!this.id){
             this.id = uuidV4()
         }
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
     }
 }
 

@@ -24,13 +24,15 @@ class UsersRepository implements IUsersRepository{
     // Métodos 
     
     create({ name, lastName, age }: ICreateUserDTO): User {
-       
+       const new_user = new User(name, lastName, age);
+       UsersRepository.INSTANCE.users.push(new_user);
+       return new_user;
     }
 
     findById(id: string): User {
         throw new Error("Method not implemented.");
     }
-    
+
     deleteUser(id: string): User {
         throw new Error("Method not implemented.");
     }
