@@ -11,7 +11,13 @@ interface IRequest {
 class CreateUserUseCase {
     constructor(private usersRepository: UsersRepository){}
 
-    execute({name,lastName,age,email}:IRequest): User{
+    execute({name,lastName,age,email}:IRequest): User {
+        const existingUser = this.usersRepository.findByEmail(email);
+
+        if(existingUser){
+            throw new Error("Esse email já está cadastrado!");
+        }
+
         const new_user = this.usersRepository.create({name,lastName,age,email});
         return new_user;
     }
