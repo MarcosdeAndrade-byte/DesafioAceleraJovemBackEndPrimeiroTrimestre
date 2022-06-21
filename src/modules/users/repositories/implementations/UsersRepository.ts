@@ -33,6 +33,10 @@ class UsersRepository implements IUsersRepository{
         return UsersRepository.INSTANCE.users.find(find => find.id === id);
     }
 
+    findByEmail(email: string): User | undefined {
+        return UsersRepository.INSTANCE.users.find(find => find.email === email);
+    }
+
     deleteUser(id: string): User[] | undefined {
         const userPosition = UsersRepository.INSTANCE.users.findIndex(find => find.id === id);
         const new_list = UsersRepository.INSTANCE.users.splice(userPosition,1);

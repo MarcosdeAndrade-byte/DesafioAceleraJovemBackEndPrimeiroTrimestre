@@ -12,6 +12,7 @@ interface IUsersRepository {
     findById(id: string): User | undefined;
     deleteUser(id: string): User[] | undefined;
     updateUser(user: User,new_email: string): User;
+    findByEmail(email: string): User | undefined;
     listUser(): User[];
 }
 
