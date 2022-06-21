@@ -34,7 +34,9 @@ class UsersRepository implements IUsersRepository{
     }
 
     deleteUser(id: string): User[] | undefined {
-        throw new Error("Method not implemented.");
+        const userPosition = UsersRepository.INSTANCE.users.findIndex(find => find.id === id);
+        const new_list = UsersRepository.INSTANCE.users.splice(userPosition,1);
+        return new_list;        
     }
     
     listUser(): User[] {
