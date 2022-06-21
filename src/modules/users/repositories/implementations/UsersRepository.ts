@@ -23,8 +23,8 @@ class UsersRepository implements IUsersRepository{
 
     // Métodos 
     
-    create({ name, lastName, age }: ICreateUserDTO): User {
-       const new_user = new User(name, lastName, age);
+    create({ name, lastName, age, email}: ICreateUserDTO): User {
+       const new_user = new User(name, lastName, age, email);
        UsersRepository.INSTANCE.users.push(new_user);
        return new_user;
     }
