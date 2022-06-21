@@ -10,7 +10,8 @@ interface ICreateUserDTO {
 interface IUsersRepository {
     create({name,lastName,age,email}: ICreateUserDTO): User;
     findById(id: string): User | undefined;
-    deleteUser(id: string): User[] | undefined; //Atenção! Devo retornar um usuário ao deletar um Id?
+    deleteUser(id: string): User[] | undefined;
+    updateUser(user: User,new_email: string): User;
     listUser(): User[];
 }
 

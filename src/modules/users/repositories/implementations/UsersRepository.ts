@@ -38,6 +38,11 @@ class UsersRepository implements IUsersRepository{
         const new_list = UsersRepository.INSTANCE.users.splice(userPosition,1);
         return new_list;        
     }
+
+    updateUser(user: User, new_email: string): User{
+        user.email = new_email;
+        return user;
+    }
     
     listUser(): User[] {
         return this.users;

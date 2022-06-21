@@ -3,6 +3,9 @@ import { createUserController } from "../modules/users/useCases/createUser";
 import { findUserByIdController } from "../modules/users/useCases/findUserById";
 import { listAllUsersController } from "../modules/users/useCases/listAllUsers";
 import { deleteUserController } from "../modules/users/useCases/deleteUser/index";
+import { updateController } from "../modules/users/useCases/updateUser/index";
+
+
 
 const usersRoutes = Router();
 
@@ -21,6 +24,10 @@ usersRoutes.get("/:user_id",(request,response) => {
 
 usersRoutes.delete("/:user_id",(request,response) => {
     deleteUserController.handle(request,response);
+});
+
+usersRoutes.patch("/:user_id/:new_email",(request,response) => {
+    updateController.handle(request,response);
 });
 
 export {usersRoutes};
