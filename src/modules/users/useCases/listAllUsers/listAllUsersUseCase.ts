@@ -7,8 +7,13 @@ class ListAllUserUseCase {
     constructor(private usersRepository: UsersRepository){}
 
     execute(): User[]{
-        const new_user = this.usersRepository.listUser();
-        return new_user;
+        const listAllUsers = this.usersRepository.listUser();
+
+        if(listAllUsers.length === 0){
+            throw new Error("A lista de usuários está vazia!");
+        }
+
+        return listAllUsers;
     }
 }
 
