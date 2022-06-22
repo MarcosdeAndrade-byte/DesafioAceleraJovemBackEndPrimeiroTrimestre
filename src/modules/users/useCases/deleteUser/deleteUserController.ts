@@ -7,8 +7,8 @@ class DeleteUserController {
     handle(request: Request, response: Response): Response {
         try{
             const { user_id } = request.params;
-            const delete_user = this.deleteUserUseCase.execute({user_id});
-            return response.status(201).json({delete_user});
+            this.deleteUserUseCase.execute({user_id});
+            return response.status(201).json({message: "Usuário deletado com sucesso"});
         }catch(error) {
             return response.status(400).json({error: error.message});
         }

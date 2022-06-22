@@ -1,3 +1,4 @@
+import { User } from "../../model/User";
 import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 
 interface IRequest {
@@ -6,7 +7,7 @@ interface IRequest {
 
 class FindUserByIdUseCase {
     constructor(private usersRepository: UsersRepository){}
-    execute({user_id}:IRequest){
+    execute({user_id}:IRequest): User {
         const user = this.usersRepository.findById(user_id);
 
         if(!user){

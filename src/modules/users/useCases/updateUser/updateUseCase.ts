@@ -8,7 +8,7 @@ interface IRequest {
 
 class UpdateUseCase {
     constructor(private usersRepository: UsersRepository){}
-    execute({user_id,new_email}:IRequest){
+    execute({user_id,new_email}:IRequest): User {
         const user = this.usersRepository.findById(user_id);
 
         if(!user) {

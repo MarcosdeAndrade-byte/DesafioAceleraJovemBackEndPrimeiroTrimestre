@@ -6,7 +6,7 @@ interface IRequest {
 
 class DeleteUserUseCase {
     constructor(private usersRepository: UsersRepository){}
-    execute({user_id}:IRequest){
+    execute({user_id}:IRequest): void {
         const existingUser = this.usersRepository.findById(user_id);
 
         if(!existingUser){
@@ -14,7 +14,6 @@ class DeleteUserUseCase {
         }
         
         const user = this.usersRepository.deleteUser(user_id);
-        return user;
     }
 }
 
