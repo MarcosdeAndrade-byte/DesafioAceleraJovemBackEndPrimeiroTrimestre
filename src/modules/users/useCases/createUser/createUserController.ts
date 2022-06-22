@@ -1,5 +1,5 @@
 import { Response,Request } from "express";
-import { CreateUserUseCase } from "./CreateUserUseCase";
+import { CreateUserUseCase } from "./createUserUseCase";
 
 
 class CreateUserController {
