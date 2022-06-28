@@ -10,8 +10,8 @@ interface ICreateUserDTO {
 interface IUsersRepository {
     create({name,lastName,age,email}: ICreateUserDTO): User;
     findById(id: string): User | undefined;
-    deleteUser(id: string): User[] | undefined;
-    updateUser(user: User,new_email: string): User;
+    deleteUser(id: string): void;
+    updateUser(id: string,body: Partial<ICreateUserDTO>): void;
     findByEmail(email: string): User | undefined;
     listUser(): User[];
 }

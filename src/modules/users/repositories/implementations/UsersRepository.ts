@@ -37,15 +37,16 @@ class UsersRepository implements IUsersRepository{
         return UsersRepository.INSTANCE.users.find(find => find.email === email);
     }
 
-    deleteUser(id: string): User[] | undefined {
+    deleteUser(id: string): void {
         const userPosition = UsersRepository.INSTANCE.users.findIndex(find => find.id === id);
-        const new_list = UsersRepository.INSTANCE.users.splice(userPosition,1);
-        return new_list;        
+        UsersRepository.INSTANCE.users.splice(userPosition,1);
     }
 
-    updateUser(user: User, new_email: string): User{
-        user.email = new_email;
-        return user;
+    updateUser(id: string, body: Partial<ICreateUserDTO>): void{
+        const indexOfUserToUpdate =  UsersRepository.INSTANCE.users.findIndex(find => find.id === id);
+        Object.keys(body).forEach((key) => { // name
+            (UsersRepository.INSTANCE.users[indexOfUserToUpdate] as any)[key] = (body as any)[key] // Carlos Silva
+        })
     }
     
     listUser(): User[] {

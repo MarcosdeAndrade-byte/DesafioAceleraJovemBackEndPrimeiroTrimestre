@@ -7,7 +7,7 @@ class ListAllUsersController {
     handle(request: Request, response: Response): Response {
         try{
             const listAllUsers = this.listAllUserUseCase.execute();
-            return response.status(201).json({listAllUsers});
+            return response.status(200).json(listAllUsers);
         }catch(error){
             return response.status(400).json({error: error.message});
         }

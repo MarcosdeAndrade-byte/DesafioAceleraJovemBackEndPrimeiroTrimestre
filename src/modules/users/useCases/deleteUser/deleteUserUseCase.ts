@@ -13,7 +13,7 @@ class DeleteUserUseCase {
             throw new Error("Usuário não encontrado!");
         }
         
-        const user = this.usersRepository.deleteUser(user_id);
+        this.usersRepository.deleteUser(user_id);
     }
 }
 
