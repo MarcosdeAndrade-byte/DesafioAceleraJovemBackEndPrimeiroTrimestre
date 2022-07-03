@@ -10,11 +10,11 @@ import { updateController } from "../modules/users/useCases/updateUser/index";
 const usersRoutes = Router();
 
 // Rota para criar usuário
-usersRoutes.post('/create',(request,response) => {
+usersRoutes.post('/',(request,response) => {
     createUserController.handle(request,response);
 });
 
-usersRoutes.get("/list",(request,response) => {
+usersRoutes.get("/",(request,response) => {
     listAllUsersController.handle(request,response);
 });
 
@@ -26,7 +26,7 @@ usersRoutes.delete("/:user_id",(request,response) => {
     deleteUserController.handle(request,response);
 });
 
-usersRoutes.patch("/:user_id/:new_email",(request,response) => {
+usersRoutes.put("/:user_id",(request,response) => {
     updateController.handle(request,response);
 });
 
